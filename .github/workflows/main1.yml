@@ -1,4 +1,4 @@
-name: Unzip RAR file
+name: Unzip ZIP file
 
 on:
   workflow_dispatch:
@@ -10,11 +10,11 @@ jobs:
     - name: Checkout repository content
       uses: actions/checkout@v2
 
-    - name: Install unrar
-      run: sudo apt-get install unrar
+    - name: Install unzip
+      run: sudo apt-get install unzip
 
-    - name: Unzip the .rar file
-      run: unrar x muie.zip output_directory/
+    - name: Unzip the .zip file
+      run: unzip muie.zip -d output_directory/
 
     - name: Commit unzipped content
       run: |
