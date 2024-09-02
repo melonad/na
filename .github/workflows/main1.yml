@@ -1,10 +1,10 @@
-name: Unzip ZIP file
+name: Unzip and Commit ZIP file
 
 on:
   workflow_dispatch:
 
 jobs:
-  unzip:
+  unzip_and_commit:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository content
