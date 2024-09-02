@@ -13,8 +13,8 @@ jobs:
     - name: Install unrar
       run: sudo apt-get install unrar
 
-   - name: Unzip the .rar file
-     run: unrar x muie.rar output_directory/
+    - name: Unzip the .rar file
+      run: unrar x muie.zip output_directory/
 
     - name: Commit unzipped content
       run: |
