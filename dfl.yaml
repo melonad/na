@@ -1,0 +1,25 @@
+name: Unzip RAR file
+
+on:
+  workflow_dispatch:
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository content
+      uses: actions/checkout@v2
+
+    - name: Install unrar
+      run: sudo apt-get install unrar
+
+   - name: Unzip the .rar file
+     run: unrar x muie.rar output_directory/
+
+    - name: Commit unzipped content
+      run: |
+        git config --global user.name 'Your Name'
+        git config --global user.email 'your-email@example.com'
+        git add .
+        git commit -m "Added unzipped content"
+        git push
